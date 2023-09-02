@@ -3,18 +3,23 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  img {
+    max-width: 100%;
+  }
+}
 .header {
   &__body {
-    display: flex;
+    display: flex; 
     justify-content: space-between;
     padding: 25px 30px;
-  }
-  &__heading {
+  } 
+  &__heading { 
     margin: 0;
     img {
       width: 140px;
       height: auto;
-    }
+    } 
   }
   &__right {
     display: flex;
@@ -22,11 +27,11 @@
     align-items: flex-start;
     position: relative;
   }
-  &__icon {
+  &__icon { 
     margin-right: 24px;
     img {
       width: 24px;
-      height: auto;
+      height: auto; 
     }
   }
   &__button {
@@ -187,4 +192,14 @@
       color: #fff;
     }
   }
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.slick-slider {
+  margin-bottom: 0;
 }
