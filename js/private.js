@@ -75,5 +75,14 @@ $( document ).ready(function() {
             focusOnSelect: true
         });
     }
-    
+
+    // teamplate page fix height
+    let heightHeader = $('.header').height();
+    let teamplatePage = $('.template-page-detail');
+
+    if(teamplatePage.length) {
+        $(teamplatePage).css({
+            'padding-top': heightHeader + 'px'
+        })
+    }
 });
