@@ -356,21 +356,21 @@ img {
     padding: 15px 0 30px 0;
   }
 }
-.heading-title h2 {
+.heading-title h1 {
   color: #AB8B8A;
   font-size: 35px;
 }
 @media (max-width: 1023px) {
-  .heading-title h2 {
+  .heading-title h1 {
     font-size: 24px;
   }
 }
-.heading-title h2 span {
+.heading-title h1 span {
   font-size: 18px;
   font-weight: 500;
 }
 @media (max-width: 1023px) {
-  .heading-title h2 span {
+  .heading-title h1 span {
     font-size: 14px;
   }
 }
