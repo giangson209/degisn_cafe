@@ -1,0 +1,61 @@
+.faq {
+	padding: 80px 0 146px 0;
+	background: #fff;
+	@media (max-width: 1023px) {
+		padding: 46px 0 100px 0;
+	}
+	accordion-tab {
+	    border-top: 1px solid #4D4D4D;
+	    padding: 20px 0;
+	    display: block;
+	    color: #4D4D4D;
+	    font-size: 16px;
+	    &:last-child {
+	    	border-bottom: 1px solid #4D4D4D;
+	    }
+	    summary {
+	    	display: flex;
+		    flex-wrap: wrap;
+		    color: #4D4D4D;
+		    font-weight: bold;
+		    position: relative;
+		    padding-right: 40px;
+		    &:after {
+		    	content: "";
+		    	width: 22px;
+		    	height: 10px;
+		    	position: absolute;
+		    	top: calc(50% - 5px);
+		    	right: 0;
+		    	background: url('../assets/arrow-down.png') no-repeat center;
+		    	background-size: contain;
+		    	transition: .3s all !important;
+		    	transform: rotate(180deg);
+		    }
+		    &.active {
+		    	&:after {
+		    		transform: rotate(0);	
+		    	}
+		    }
+	    }
+	}
+	&__content {
+		display: flex;
+	    flex-wrap: wrap;
+	    margin-top: 20px;
+	}
+	&__alpha {
+		font-weight: 500;
+	    flex: 0 0 12px;
+	    margin-right: 20px;
+	    max-width: 12px;
+	}
+	&__title {
+		flex: 0 0 calc(100% - 32px);
+    	max-width: calc(100% - 32px);
+	}
+	&__content-info {
+		flex: 0 0 calc(100% - 32px);
+    	max-width: calc(100% - 32px);
+	}
+}

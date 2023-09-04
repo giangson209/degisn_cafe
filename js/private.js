@@ -113,4 +113,9 @@ $( document ).ready(function() {
             'padding-top': heightHeader + 'px'
         })
     }
+
+
+    $( ".faq accordion-tab summary" ).on( "click", function() {
+      $(this).toggleClass('active');
+    } );
 });
