@@ -118,4 +118,9 @@ $( document ).ready(function() {
     $( ".faq accordion-tab summary" ).on( "click", function() {
       $(this).toggleClass('active');
     } );
+
+    $( ".product-shipping__body details h3" ).on( "click", function() {
+      $(this).toggleClass('active');
+      $('.product-shipping__content').slideToggle(300);
+    } );
 });

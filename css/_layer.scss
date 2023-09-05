@@ -24,7 +24,7 @@ img {
   font-size: 16px;
   color: #4D4D4D;
   letter-spacing: 0;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .rte h4 {
@@ -32,6 +32,7 @@ img {
   font-size: 16px;
   color: #4D4D4D;
   letter-spacing: 0;
+  margin-top: 40px;
   margin-bottom: 20px;
 }
 
@@ -351,7 +352,7 @@ img {
     padding-top: 134px !important;
   }
 }
-.heading-title {
+.heading-page {
   padding: 30px 0 40px 0;
   background: #F5EFE7;
   @media (max-width: 1023px) {
@@ -359,15 +360,17 @@ img {
   }
   h1 {
     color: #AB8B8A;
-    font-size: 35px;
+    font-size: 18px;
+    font-weight: 500;
     @media (max-width: 1023px) {
-      font-size: 24px;
+      font-size: 14px;
     }
     span {
-      font-size: 18px;
-      font-weight: 500;
+      font-size: 35px;
+      font-weight: normal;
+      display: block;
       @media (max-width: 1023px) {
-        font-size: 14px;
+        font-size: 24px;
       }
     }
   }
