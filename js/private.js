@@ -115,12 +115,41 @@ $( document ).ready(function() {
     }
 
 
-    $( ".faq accordion-tab summary" ).on( "click", function() {
-      $(this).toggleClass('active');
-    } );
+    $( ".faq accordion-tab summary").on( "click", function() {
+        $(this).toggleClass('active');
+    });
 
-    $( ".product-shipping__body details h3" ).on( "click", function() {
-      $(this).toggleClass('active');
-      $('.product-shipping__content').slideToggle(300);
-    } );
+    $(".product-shipping__body details h3").on( "click", function() {
+        $(this).toggleClass('active');
+        $('.product-shipping__content').slideToggle(300);
+    });
+
+     // Cart-shipping
+    let delivery = $('#datePicker');
+    if(delivery.length) {
+        const datePicker = document.getElementById("datePicker");
+        const today = new Date();
+        const nextDay = new Date();
+        nextDay.setDate(today.getDate() + 1);
+
+        flatpickr(datePicker, {
+            mode: "single",
+            minDate: today,
+            dateFormat: "Y-m-d",
+            locale: "ja",
+            disable: [
+                function(date) {
+                    return (
+                      date.getDate() === today.getDate() &&
+                      date.getMonth() === today.getMonth() &&
+                      date.getFullYear() === today.getFullYear()
+                    ) || (
+                      date.getDate() === nextDay.getDate() &&
+                      date.getMonth() === nextDay.getMonth() &&
+                      date.getFullYear() === nextDay.getFullYear()
+                    );
+                },
+            ],
+        });
+    }
 });
