@@ -420,6 +420,8 @@ img {
   color: #AB8B8A;
   font-size: 18px;
   font-weight: 500;
+  font-family: "mrs-eaves-xl-serif-narrow", serif;
+  letter-spacing: 3.5px;
 }
 
 @media (max-width: 1023px) {
@@ -449,13 +451,11 @@ img {
   width: 100%;
   -o-object-fit: cover;
   object-fit: cover;
-  display: none;
   opacity: 0;
   transition: .5s all;
 }
 
 .cake-banner__media .slick-slider img {
-  display: block;
   opacity: 1;
   transition: .5s all;
 }
@@ -1439,7 +1439,29 @@ img {
 }
 
 .collection-product .card__badge {
-  display: none;
+  position: absolute;
+  content: "";
+  bottom: 10px;
+  left: 10px;
+  z-index: 2;
+}
+
+.collection-product .card__badge .badge {
+  color: #fff;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1;
+  padding: .3rem 1rem .3rem;
+  border-radius: 12px;
+}
+
+.collection-product .card__badge .badge--sale {
+  background: #FF0000;
+}
+
+.collection-product .card__badge .badge--soldout {
+  background: #4D4D4D;
 }
 
 .collection-product .card__heading a {
@@ -1454,6 +1476,7 @@ img {
   color: #4D4D4D;
   font-size: 18px;
   font-weight: bold;
+  text-decoration: none;
 }
 
 @media (max-width: 767px) {
@@ -1471,6 +1494,27 @@ img {
   .collection-product .price-item .taxt-text {
     font-size: 10px;
   }
+}
+
+.collection-product .price__sale .price-item--regular {
+  position: relative;
+  margin-right: 10px;
+}
+
+.collection-product .price__sale .price-item--regular:before {
+  position: absolute;
+  content: "";
+  width: calc(100% - 5px);
+  height: 1px;
+  background: #4D4D4D;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.collection-product .price__sale .price-item--last {
+  color: #FF0000;
 }
 
 .section-heart {
@@ -1724,6 +1768,8 @@ img {
 
 .product .price .price-item--regular {
   margin-right: 24px;
+  text-decoration: none;
+  position: relative;
 }
 
 @media (max-width: 767px) {
@@ -1736,12 +1782,25 @@ img {
   color: #4D4D4D;
   font-size: 24px;
   font-weight: bold;
+  margin-right: 10px;
+}
+
+.product .price__sale .price-item--regular:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #4D4D4D;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: -1;
 }
 
 .product .price .taxt-text {
   font-size: 14px;
   font-weight: 500;
-  padding-right: 24px;
 }
 
 @media (max-width: 767px) {

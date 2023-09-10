@@ -355,6 +355,8 @@ img {
     color: #AB8B8A;
     font-size: 18px;
     font-weight: 500;
+    font-family: $fontEnNarrow;
+    letter-spacing: 3.5px;
     @media (max-width: 1023px) {
       font-size: 14px;
     }

@@ -2,7 +2,6 @@ $( document ).ready(function() {
 
     $(window).scroll(function() {
         var headerH = $('.header').outerHeight(true);
-        console.log(headerH);
         var scrollVal = $(this).scrollTop();
         if ( scrollVal > headerH ) {
             $('.header').addClass('fixmenu');
@@ -10,8 +9,6 @@ $( document ).ready(function() {
             $('.header').removeClass('fixmenu');
         }
     });
-
-
 
     $('.header__button').click(function(){
         $('.menu-nav, .header__button-line').toggleClass('active');
@@ -104,7 +101,7 @@ $( document ).ready(function() {
             slidesToScroll: 1,
             asNavFor: '.product__media-list',
             dots: true,
-            // centerMode: true,
+            fade: true,
             focusOnSelect: true,
             infinite: true
         });
