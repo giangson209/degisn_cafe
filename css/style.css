@@ -1566,6 +1566,15 @@ img {
   font-weight: bold;
 }
 
+.product--thumbnail_slider {
+  display: flex;
+}
+
+.product-media,
+.product-info {
+  max-width: 50%;
+}
+
 .single-product {
   padding: 24px 0;
 }
