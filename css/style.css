@@ -634,6 +634,10 @@ img {
   font-size: 16px;
   font-weight: bold;
 }
+.product__button-link a:hover {
+  background: #AB8B8D;
+  color: #fff;
+}
 .product__list {
   display: flex;
   flex-wrap: wrap;
