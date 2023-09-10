@@ -99,8 +99,8 @@ $( document ).ready(function() {
             fade: true,
             infinite: true,
             asNavFor: '.thumbnail-list',
-            nextArrow: '<a href="javascript:void(0)" class="arr-right"><img src="assets/arr-right.png" alt=""></a>',
-            prevArrow: '<a href="javascript:void(0)" class="arr-left"><img src="assets/arr-left.png" alt=""></a>',
+            nextArrow: '<a href="javascript:void(0)" class="arr-right"><img src="https://mars-cafe-sgp.myshopify.com/cdn/shop/t/2/assets/arr-right.png" alt=""></a>',
+            prevArrow: '<a href="javascript:void(0)" class="arr-left"><img src="https://mars-cafe-sgp.myshopify.com/cdn/shop/t/2/assets/arr-left.png" alt=""></a>',
         });
         $('.thumbnail-list').slick({
             slidesToShow: 6,
