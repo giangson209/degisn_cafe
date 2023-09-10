@@ -33,9 +33,6 @@ $( document ).ready(function() {
                     setTimeout(function() {
                         $animatables_delay.addClass('animated');
                     }, 600);
-                } else {
-                    $animatable.removeClass('animated');
-                    $animatables_delay.removeClass('animated');
                 }
             });
         };
