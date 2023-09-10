@@ -1,9 +1,9 @@
 $( document ).ready(function() {
 
     $(window).scroll(function() {
-       var headerH = $('.header').outerHeight(true);
-       console.log(headerH);
-       var scrollVal = $(this).scrollTop();
+        var headerH = $('.header').outerHeight(true);
+        console.log(headerH);
+        var scrollVal = $(this).scrollTop();
         if ( scrollVal > headerH ) {
             $('.header').addClass('fixmenu');
         } else {
@@ -19,29 +19,29 @@ $( document ).ready(function() {
 
     //scroll animation
     jQuery(function($) {
-      var doAnimations = function() {
-        var offset = $(window).scrollTop() + $(window).height(),
-            $animatables = $('.concept__list-item-image');
+        var doAnimations = function() {
+            var offset = $(window).scrollTop() + $(window).height(),
+                $animatables = $('.concept__list-item-image');
             $animatables_delay = $('.concept__list-item-text');
-        if ($animatables.length == 0) {
-          $(window).off('scroll', doAnimations);
-        }
-        $animatables.each(function(i) {
-           var $animatable = $(this);
-          if (($animatable.offset().top + $animatable.height() - 20) < offset) {
-                $animatable.addClass('animated');
-                setTimeout(function() { 
-                    $animatables_delay.addClass('animated');
-                }, 600);
-          } else {
-            $animatable.removeClass('animated'); 
-            $animatables_delay.removeClass('animated'); 
-          }
-        });
-      };
-      $(window).on('scroll', doAnimations);
-      $(window).trigger('scroll'); 
-    }); 
+            if ($animatables.length == 0) {
+                $(window).off('scroll', doAnimations);
+            }
+            $animatables.each(function(i) {
+                var $animatable = $(this);
+                if (($animatable.offset().top + $animatable.height() - 20) < offset) {
+                    $animatable.addClass('animated');
+                    setTimeout(function() {
+                        $animatables_delay.addClass('animated');
+                    }, 600);
+                } else {
+                    $animatable.removeClass('animated');
+                    $animatables_delay.removeClass('animated');
+                }
+            });
+        };
+        $(window).on('scroll', doAnimations);
+        $(window).trigger('scroll');
+    });
 
     // main slider
     let mainSlider = $('.banner-slick-slider')
@@ -52,9 +52,9 @@ $( document ).ready(function() {
             slidesToShow: 1,
             dots:false,
             fade: true,
-            cssEase: 'linear', 
+            cssEase: 'linear',
             speed: 5000,
-        }); 
+        });
     }
 
     // gerally slider
@@ -69,38 +69,47 @@ $( document ).ready(function() {
             cssEase: "linear",
             responsive: [
                 {
-                  breakpoint: 767,
-                  settings: {
-                    slidesToShow: 3,
-                  }
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 3,
+                    }
                 },
                 {
-                  breakpoint: 480,
-                  settings: {
-                    slidesToShow: 2,
-                  }
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 2,
+                    }
                 }
             ]
         });
     }
 
     // product slider
+    var helpers = {
+        addZeros: function (n) {
+            return (n < 10) ? '0' + n : '' + n;
+        }
+    };
     let productSlider = $('.product__media-list');
     if(productSlider.length) {
         $('.product__media-list').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
-            arrows: false,
+            arrows: true,
             fade: true,
-            asNavFor: '.thumbnail-list'
+            infinite: true,
+            asNavFor: '.thumbnail-list',
+            nextArrow: '<a href="javascript:void(0)" class="arr-right"><img src="assets/arr-right.png" alt=""></a>',
+            prevArrow: '<a href="javascript:void(0)" class="arr-left"><img src="assets/arr-left.png" alt=""></a>',
         });
         $('.thumbnail-list').slick({
-            slidesToShow: 3,
+            slidesToShow: 6,
             slidesToScroll: 1,
             asNavFor: '.product__media-list',
             dots: true,
-            centerMode: true,
-            focusOnSelect: true
+            // centerMode: true,
+            focusOnSelect: true,
+            infinite: true
         });
     }
 
@@ -124,7 +133,7 @@ $( document ).ready(function() {
         $('.product-shipping__content').slideToggle(300);
     });
 
-     // Cart-shipping
+    // Cart-shipping
     let delivery = $('#datePicker');
     if(delivery.length) {
         const datePicker = document.getElementById("datePicker");
@@ -140,16 +149,23 @@ $( document ).ready(function() {
             disable: [
                 function(date) {
                     return (
-                      date.getDate() === today.getDate() &&
-                      date.getMonth() === today.getMonth() &&
-                      date.getFullYear() === today.getFullYear()
+                        date.getDate() === today.getDate() &&
+                        date.getMonth() === today.getMonth() &&
+                        date.getFullYear() === today.getFullYear()
                     ) || (
-                      date.getDate() === nextDay.getDate() &&
-                      date.getMonth() === nextDay.getMonth() &&
-                      date.getFullYear() === nextDay.getFullYear()
+                        date.getDate() === nextDay.getDate() &&
+                        date.getMonth() === nextDay.getMonth() &&
+                        date.getFullYear() === nextDay.getFullYear()
                     );
                 },
             ],
         });
     }
+
+    // Delivery time
+    $('.delivery-select').change(function() {
+        let homeDeliveryValue = $(this).val();
+        $('#DeliveryTime').val(homeDeliveryValue);
+    });
+
 });
