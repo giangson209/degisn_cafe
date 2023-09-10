@@ -68,7 +68,7 @@ $( document ).ready(function() {
                     breakpoint: 767,
                     settings: {
                         slidesToShow: 3,
-                    }
+                    } 
                 },
                 {
                     breakpoint: 480,
@@ -88,12 +88,33 @@ $( document ).ready(function() {
     };
     let productSlider = $('.product__media-list');
     if(productSlider.length) {
+
+        var currentSlide;
+        var slidesCount;
+        var sliderCounter = document.createElement('div');
+        sliderCounter.classList.add('slider__counter');
+
+        var updateSliderCounter = function(slick, currentIndex) {
+            currentSlide = slick.slickCurrentSlide() + 1;
+            slidesCount = slick.slideCount;
+            $(sliderCounter).text(currentSlide + '/' +slidesCount)
+        };
+
+        productSlider.on('init', function(event, slick) {
+            productSlider.append(sliderCounter);
+            updateSliderCounter(slick);
+        });
+
+        productSlider.on('afterChange', function(event, slick, currentSlide) {
+            updateSliderCounter(slick, currentSlide);
+        });
+
         $('.product__media-list').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: true,
             fade: true,
-            infinite: true,
+            // infinite: true, 
             asNavFor: '.thumbnail-list',
             nextArrow: '<a href="javascript:void(0)" class="arr-right"><img src="https://mars-cafe-sgp.myshopify.com/cdn/shop/t/2/assets/arr-right.png" alt=""></a>',
             prevArrow: '<a href="javascript:void(0)" class="arr-left"><img src="https://mars-cafe-sgp.myshopify.com/cdn/shop/t/2/assets/arr-left.png" alt=""></a>',
@@ -105,7 +126,7 @@ $( document ).ready(function() {
             dots: true,
             // centerMode: true,
             focusOnSelect: true,
-            infinite: true
+            // infinite: true 
         });
     }
 
