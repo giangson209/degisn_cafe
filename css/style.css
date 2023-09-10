@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +7,35 @@
 
 img {
   max-width: 100%;
+}
+
+input::-moz-placeholder {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+}
+
+input::placeholder {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+}
+
+.btn {
+  display: inline-flex;
+  height: 65px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 100px;
+  text-decoration: none;
+  border: 1px solid #AB8B8D;
+  border-radius: 65px;
+  color: #ab8b8c;
+  font-size: 16px;
+  font-weight: 700;
+  transition: .3s all;
+}
+
+.btn:hover {
+  transition: .3s all;
+  background: #AB8B8D;
+  color: #fff;
 }
 
 .rte p {
@@ -2082,6 +2112,152 @@ img {
 
 .single-product .thumbnail-list .slick-dots, .single-product .thumbnail-list .slick-arrow {
   display: none !important;
+}
+
+.cart-notification {
+  font-size: 18px;
+  color: #FF0000;
+  margin-bottom: 50px;
+}
+
+.cart-items {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #707070;
+}
+
+.cart-items thead th {
+  font-size: 18px;
+  font-weight: bold;
+  color: #4D4D4D;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid #707070;
+  border-bottom: 1px solid #707070;
+  line-height: 1;
+}
+
+.cart-items td {
+  padding-top: 50px;
+}
+
+.cart-items .product-option {
+  font-size: 16px;
+  display: flex;
+}
+
+.cart-items .product-option dt {
+  font-weight: bold;
+}
+
+.cart-items .price--end {
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+}
+
+.cart-items .price--end .taxt-text {
+  display: none;
+}
+
+.cart-items .quantity__input {
+  font-size: 16px;
+}
+
+.cart-items .cart-item cart-remove-button {
+  margin: 0;
+  font-size: 16px;
+}
+
+.cart-items .cart-item cart-remove-button .button {
+  text-decoration: underline;
+}
+
+.cart-item__name {
+  font-weight: bold;
+  font-size: 24px;
+  letter-spacing: 0;
+}
+
+.cart__footer .totals {
+  font-size: 24px;
+  margin-top: 0;
+  color: #4D4D4D;
+  align-items: center;
+}
+
+.cart__footer .totals .taxt-text {
+  font-size: 18px;
+}
+
+.cart__footer .totals__total {
+  margin-top: 0;
+}
+
+.cart__footer .tax-note {
+  font-size: 14px;
+}
+
+.cart__footer .js-contents {
+  margin-bottom: 60px;
+}
+
+.cart__note label {
+  font-size: 24px;
+  color: #4D4D4D;
+}
+
+.cart__note .text-area {
+  border: 1px solid #B7B7B7;
+  height: 50px;
+  min-height: inherit;
+  font-size: 16px;
+}
+
+.cart__ctas button {
+  padding: 0;
+  background: #AB8B8A;
+  border-radius: 33px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  height: 65px;
+  margin-top: 30px;
+}
+
+.cart-shipping {
+  border: 3px solid #72B9FF;
+  padding: 30px 30px 10px;
+  margin-top: 30px;
+}
+
+.cart-shipping label {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+}
+
+.cart-shipping .required {
+  font-size: 16px;
+  color: #FF0000;
+  position: absolute;
+  right: -20px;
+  top: -8px;
+}
+
+.cart-shipping input, .cart-shipping select {
+  display: block;
+  height: 52px;
+  border: 1px solid #707070;
+  width: 480px;
+  font-size: 16px;
+  padding-left: 20px;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+  color: #000000;
+}
+
+.cart-shipping__carlendar {
+  margin-bottom: 28px;
 }
 
 /*# sourceMappingURL=map/style.css.map */

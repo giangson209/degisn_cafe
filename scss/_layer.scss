@@ -1,6 +1,7 @@
 // font-family setting
 $fontEn: "mrs-eaves-xl-serif",serif;
 $fontEnNarrow: "mrs-eaves-xl-serif-narrow",serif;
+$fontJP: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
 
 * {
   margin: 0;
@@ -10,6 +11,30 @@ $fontEnNarrow: "mrs-eaves-xl-serif-narrow",serif;
 
 img {
   max-width: 100%;
+}
+
+input::placeholder {
+  font-family: $fontJP;
+}
+
+.btn {
+  display: inline-flex;
+  height: 65px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 100px;
+  text-decoration: none;
+  border: 1px solid #AB8B8D;
+  border-radius: 65px;
+  color: #ab8b8c;
+  font-size: 16px;
+  font-weight: 700;
+  transition: .3s all;
+  &:hover {
+    transition: .3s all;
+    background: #AB8B8D;
+    color: #fff;
+  }
 }
 
 // reset 

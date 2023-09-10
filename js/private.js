@@ -10,6 +10,8 @@ $( document ).ready(function() {
         }
     });
 
+
+
     $('.header__button').click(function(){
         $('.menu-nav, .header__button-line').toggleClass('active');
     });
@@ -101,7 +103,7 @@ $( document ).ready(function() {
             slidesToScroll: 1,
             asNavFor: '.product__media-list',
             dots: true,
-            fade: true,
+            // centerMode: true,
             focusOnSelect: true,
             infinite: true
         });
@@ -126,6 +128,30 @@ $( document ).ready(function() {
         $(this).toggleClass('active');
         $('.product-shipping__content').slideToggle(300);
     });
+
+    // message
+    $('#message').on("input", function() {
+        let messageInput = $(this).val();
+        $('#messagePush').val(messageInput)
+    })
+
+    // check message
+     $("form[action='/cart/add'] [type=submit]").on("click", function(e) {
+        if(runCheckSubmit()){
+            return true;
+        }else{
+            alert('メッセージを入力してください。')
+            return false;
+        }
+    });
+
+    function runCheckSubmit() {
+        let result = true;
+        if ($("#message").val() == '') {
+            result = false;
+        }
+        return result;
+    }
 
     // Cart-shipping
     let delivery = $('#datePicker');
