@@ -1182,6 +1182,11 @@ input::placeholder {
   font-weight: bold;
   background: #FAFAFA;
 }
+@media (max-width: 767px) {
+  .section-content table tr {
+    display: flex;
+  }
+}
 .section-content table tr:first-child td {
   background: #F5EFE7;
 }
@@ -1193,6 +1198,7 @@ input::placeholder {
   .section-content table tr td {
     padding: 16px 10px;
     width: calc(100% - 160px);
+    flex: 0 0 calc(100% - 160px);
   }
 }
 .section-content table tr td:first-child, .section-content table tr td:last-child {
@@ -1201,6 +1207,7 @@ input::placeholder {
 @media (max-width: 767px) {
   .section-content table tr td:first-child, .section-content table tr td:last-child {
     width: 80px;
+    flex: 0 0 80px;
   }
 }
 
