@@ -13,6 +13,9 @@
 	    font-weight: bold;
 	    background: #FAFAFA;
 		tr {
+			@media (max-width: 767px) {
+				display: flex;
+			}
 			&:first-child {
 				td {
 					background: #F5EFE7;
@@ -24,11 +27,13 @@
 				@media (max-width: 767px) {
 					padding: 16px 10px;
 					width: calc(100% - 160px);
+					flex: 0 0 calc(100% - 160px);
 				}
 				&:first-child, &:last-child {
 					width: 20%;
 					@media (max-width: 767px) {
 						width: 80px;
+						flex: 0 0 80px;
 					}
 				}
 			}
@@ -632,5 +637,19 @@
 		.slick-dots, .slick-arrow {
 			display: none !important;
 		}
+	}
+}
+
+.slider__counter {
+	display: none;
+	@media (max-width: 767px) {
+		display: flex;
+		position: absolute;
+		bottom: -33px;
+		left: 0;
+		width: 100%;
+		justify-content: center;
+		text-align: center;
+		pointer-events: none;
 	}
 }
